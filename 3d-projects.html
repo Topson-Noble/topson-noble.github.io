@@ -48,7 +48,20 @@
   <main class="main">
 
     <!-- 3D Projects Section -->
-    <section id="projects" class="portfolio section">
+        <section id="3d projects" class="3d projects section" 
+  style="background: url('assets/img/bgrender.png') center center/cover no-repeat; 
+         background-position: center center;
+         position: relative; 
+         overflow: hidden;">
+
+  <!-- dark overlay (place this immediately inside the section) -->
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); backdrop-filter: blur(3px); z-index:0;"></div>
+
+  <!-- change the container so content sits above overlay -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
+    <!-- ...existing Resume content below -->
+
+
       <div class="container section-title" data-aos="fade-up">
         <h2>3D Projects</h2>
         <p>Here are some of my completed 3D projects showcasing animations, lighting, rendering, and VFX work.</p>

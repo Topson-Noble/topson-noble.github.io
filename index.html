@@ -63,66 +63,66 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section" style="background: url('assets/img/bgrender2.jpg') center center/125% no-repeat; position: relative; overflow: hidden;">
-    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4); z-index:0; content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(0px);
-  z-index: 0;"></div>
-  
+    <!-- Hero Section -->
+<section id="hero" class="hero section" 
+    style="
+        background: url('assets/img/bgrender3.png') center center/cover no-repeat !important; 
+        min-height: 100vh; 
+        position: relative; 
+        overflow: hidden;"
+    data-aos=""> <!-- remove any AOS effect on the hero to render immediately -->
+
+    <!-- dark overlay -->
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.45); backdrop-filter: blur(0px); z-index:0;"></div>
+
+    <!-- content container above overlay -->
     <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
-      
-
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4 align-items-center">
-          <div class="col-lg-6 order-2 order-lg-1">
-            <div class="hero-content">
-              <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Temitope Falade</span></h1>
-              <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="Game Programmer, 3D Animator, CG Generalist, VFX Artist"></span></h2>
-              <p data-aos="fade-up" data-aos-delay="400">I specialize in designing interactive gameplay systems, bringing characters to life with engaging personalities, crafting a visually appealing world as a CG Generalist, and creating dynamic and cinematic VFX. My goal is to merge technical art with creative storytelling to deliver experiences that captivate both players and audiences.</p>
-              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
-                <a href="portfolio.html" class="btn btn-primary">View My Works</a>
-                <a href="contact.html" class="btn btn-outline">Get In Touch</a>
-              </div>
-              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
-                <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2">
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-              <div class="image-wrapper">
-                <img src="assets/img/profile/MyPhoto.jpg" alt="Temitope Falade" class="img-fluid">
-                <div class="floating-elements">
-                  <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
-                    <i class="bi bi-palette"></i>
-                    <span>Design</span>
-                  </div>
-                  <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Code</span>
-                  </div>
-                  <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
-                    <i class="bi bi-lightbulb"></i>
-                    <span>Ideas</span>
-                  </div>
+            <div class="col-lg-6 order-2 order-lg-1">
+                <div class="hero-content">
+                    <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Temitope Falade</span></h1>
+                    <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="Game Programmer, 3D Animator, CG Generalist, VFX Artist"></span></h2>
+                    <p data-aos="fade-up" data-aos-delay="400">I specialize in designing interactive gameplay systems, bringing characters to life with engaging personalities, crafting a visually appealing world as a CG Generalist, and creating dynamic and cinematic VFX. My goal is to merge technical art with creative storytelling to deliver experiences that captivate both players and audiences.</p>
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+                        <a href="portfolio.html" class="btn btn-primary">View My Works</a>
+                        <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                    <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+                        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+                <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="image-wrapper">
+                        <img src="assets/img/profile/MyPhoto.jpg" alt="Temitope Falade" class="img-fluid" 
+                            style="transform: translateX(0px) translateY(0px);"> <!-- you can nudge X/Y here -->
+                        <div class="floating-elements">
+                            <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
+                                <i class="bi bi-palette"></i>
+                                <span>Design</span>
+                            </div>
+                            <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
+                                <i class="bi bi-code-slash"></i>
+                                <span>Code</span>
+                            </div>
+                            <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
+                                <i class="bi bi-lightbulb"></i>
+                                <span>Ideas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-      </div>
+</section>
 
-    </section><!-- /Hero Section -->
 
   </main>
 
