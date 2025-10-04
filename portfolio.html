@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio - My Projects</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Portfolio Categories Section -->
+    <section id="portfolio categories" class="portfolio categories section" 
+  style="background: url('assets/img/bgrender5.png') center center/cover no-repeat; 
+         background-position: center 0.2px;
+         position: relative; 
+         overflow: hidden;">
+
+  <!-- dark overlay (place this immediately inside the section) -->
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.0); backdrop-filter: blur(0px); z-index:0;"></div>
+
+  <!-- change the container so content sits above overlay -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
+    <!-- ...existing Resume content below -->
+
+
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Select a category to explore my work in detail.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+
+          <!-- Game Projects Card -->
+          <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-card h-100 text-center p-4" style="cursor:pointer;" onclick="location.href='game-projects.html';">
+              <div class="portfolio-img mb-3">
+                <img src="assets/img/portfolio/Game.png" class="img-fluid rounded" alt="Game Projects">
+              </div>
+              <h4>Game Projects</h4>
+              <p>Explore my interactive and gameplay-focused projects with detailed breakdowns and previews.</p>
+              <a href="game-projects.html" class="btn btn-primary mt-2">Explore Games</a>
+            </div>
+          </div>
+
+          <!-- 3D Projects Card -->
+          <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="portfolio-card h-100 text-center p-4" style="cursor:pointer;" onclick="location.href='3d-projects.html';">
+              <div class="portfolio-img mb-3">
+                <img src="assets/img/portfolio/3D.png" class="img-fluid rounded" alt="3D Projects">
+              </div>
+              <h4>3D Projects</h4>
+              <p>View my 3D animation, VFX, and CG projects categorized by Character Animations, Lighting & Rendering, and VFX.</p>
+              <a href="3d-projects.html" class="btn btn-primary mt-2">Explore 3D Work</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Portfolio Categories Section -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
+          <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+          <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+      </div>
+      <div class="credits text-center">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
