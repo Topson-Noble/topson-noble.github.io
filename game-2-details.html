@@ -70,10 +70,9 @@
     <section id="project-details" class="portfolio section">
 
       <div class="container section-title" data-aos="fade-up">
-        <h2>Meowrning Duty</h2>
-        <p>A short, quirky game that utilizes a fast-button mashing mechanics and a repetitive gameplay loop with multiple endings and narratives.<p>
-
-        <p>This game was created for the Epic Mega Jam challenge.</p>
+        <h2>Cantoni</h2>
+        <p>A simple, highscoring game built with Unreal Engine, utilizing a point and click mechanics and a leaderboard system.<p>
+        <p>This game was created as an experimental project</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -81,8 +80,8 @@
         <!-- Gameplay Video -->
         <div class="ratio ratio-16x9 mb-4">
           <iframe 
-            src="https://player.vimeo.com/video/1128655987" 
-            title="Meowrning Duty Gameplay Video"
+            src="https://player.vimeo.com/video/1128828093" 
+            title="Cantoni Gameplay"
             frameborder="0" 
             allow="autoplay; fullscreen; picture-in-picture" 
             allowfullscreen>
@@ -93,7 +92,7 @@
         <div class="project-download">
           <h3>Download Game</h3>
           <p>You can download and play the game using the link below:</p>
-           <a href="https://topzone.itch.io/meowrning-duty" target="_blank" class="btn btn-primary">
+           <a href="https://topzone.itch.io/cantoni" target="_blank" class="btn btn-primary">
           <i class="bi bi-download"></i> Download
           </a>
         </div>
@@ -101,61 +100,72 @@
         <!-- Overview -->
         <div class="project-section" data-aos="fade-up">
           <h4>Project Overview</h4>
-          <p>Meowrning Duty is a short, lighthearted game developed for the 2025 Epic MegaJam, centered around the theme “Here we go again.” The project explores the idea of repetition and daily routine through a fun, quirky lens, putting the player in control of a cat-shaped alarm clock whose eternal mission is to wake its sleepy human every single morning.</p>
+          <p>Cantoni is a lighthearted, casual point-and-click game built around a dynamic leaderboard system. The game was designed as both a fun interactive experience and a personal technical challenge to implement player data persistence and scoring mechanics within a complete gameplay loop.</p>
+          <p>The title “Cantoni” takes its name from the original soundtrack composed for the game, a lively one-minute track that sets the rhythm and tone for this cheerful, slightly chaotic world where happiness is constantly under attack.</p>
         </div>
 
         <!-- Gameplay Concept -->
         <div class="project-section" data-aos="fade-up">
           <h4>Gameplay Concept</h4>
-          <p>Built around a fast-paced button-mashing mechanic, the player must repeatedly tap the ‘E’ key to charge a wake-up meter before the timer runs out. Succeed, and the alarm rings out with a triumphant meow, the human wakes up, and a new day begins. Fail, and the human keeps snoozing, leaving the poor cat alarm to endure another chorus of snoring.</p>
-          <p>The gameplay loop is intentionally simple, repetitive, and comedic, capturing the essence of the jam’s theme: doing the same thing over and over again. Each new day offers slight variations in visuals, timing, and tone, reinforcing the monotony and humor of the cat’s endless duty.</p>
+          <p>At the start of each session, players enter their name, which the game saves and remembers for later ranking on the leaderboard. Once the game begins, players are introduced to a fictional, upbeat world where three joyful friends dance at the center of the screen, simply trying to stay happy.</p>
+          <p>Their peace, however, is constantly disrupted by a mischievous bubble-shooting creature that orbits around them, launching bubbles from every direction. The player’s sole task is to click on these bubbles before they reach the friends, popping them to protect the group’s happiness level.</p>
+          <p>Each bubble popped earns a score, while missed ones reduce happiness. The challenge continues for the full duration of the Cantoni music track, roughly one minute of fast-paced, rhythmic gameplay. When the music ends, the game stops spawning bubbles and transitions to a results screen showing the player’s final score and ranking.</p>
         </div>
 
-        <!-- Narrative/Tone -->
+        <!-- Leaderboard/Progression-->
         <div class="project-section" data-aos="fade-up">
-          <h4>Narrative & Tone</h4>
-          <p>The game’s tone is playful yet subtly existential. Every morning feels familiar, yet slightly different. The cat alarm grows increasingly desperate and resigned, perfectly embodying the “Here we go again” theme.
-Players encounter varying intro and ending lines, adding personality and charm to the otherwise minimalist loop, and making each attempt feel fresh.</p>
+          <h4>Leaderboard & Progression</h4>
+          <p>One of the game’s key features is its persistent leaderboard system.</p>
+          <p>After every session:</p>
+          <p>- The player’s name and score are automatically saved.</p>
+          <p>- Scores are ranked in real-time, showing only the top 10 players, the "Top Poppers"</p>
+          <p>- Returning players can see their new scores compared with previous ones, encouraging replayability and friendly competition.</p>
+          <p>The leaderboard implementation was the project’s primary learning goal, showcasing data saving, player tracking, and score sorting logic within a self-contained Unreal Engine project.</p>
         </div>
 
         <!-- Design/Aesthetics -->
         <div class="project-section" data-aos="fade-up">
           <h4>Design & Aesthetics</h4>
-          <p>- Visual Style: Clean, minimalist and stylized aesthetic.</p>
-          <p>- Character Design: The main character, a cat-shaped alarm clock, reinforces the comedic identity of the game. Each button press emits a “meow,” culminating in a classic alarm ring when successful.</p>
-          <p>- UI/UX: Built around clarity and timing precision, ensuring that players immediately understand the objective and rhythm.</p>
+          <p>- Visual Style: Simple and minimal color, focusing on clarity of motion for quick reaction gameplay.</p>
+          <p>- Character Design: Three expressive, looping characters represent joy and friendship at the game’s heart.</p>
+          <p>- Antagonist: A spiky creature that moves cyclically along the screen’s edges, dynamically spawning bubbles toward the center.</p>
+          <p>- Audio: Original background track “Cantoni” composed to synchronize with gameplay pacing, giving the experience rhythm and personality.</p>
+          <p>- UI: Clean interface for player input, score tracking, and leaderboard display.<p>
         </div>
 
          <!-- Development Details -->
         <div class="project-section" data-aos="fade-up">
           <h4>Development Details</h4>
           <p>- Engine: Unreal Engine 5.5.4</p>
-          <p>- Timeframe: Designed and developed within the limited window of the Epic MegaJam (approx. 12 hours of active work).</p>
-          <p>- Role: Solo developer, responsible for game design, programming, UI, animation timing, audio design, and overall polish.</p>
-          <p>- Platforms: PC (Windows), with planned builds for Android and macOS.</p>
+          <p>- Development Focus: Gameplay systems, UI/UX, and persistent leaderboard integration.<p>
+          <p>- Role: Solo developer, responsible for game design, programming, sound composition, and visual direction.<p>
+          <p>- Platforms: PC (Windows), with potential scalability for web or mobile builds.<p>
         </div>
 
         <!-- Technical & Creative Highlights -->
         <div class="project-section" data-aos="fade-up">
           <h4>Technical & Creative Highlights</h4>
-          <p>- Implemented a reactive button-mash system that responds to speed and accuracy.</p>
-          <p>- Designed multiple outcome states (success/fail) with randomized text feedback for replay variety.</p>
-          <p>- Integrated custom sound design, including unique “meow” cues that escalate into alarm rings.</p>
-          <p>- Focused on strong theme integration, repetition, frustration, and humor, all wrapped in a simple, replayable experience.</p>
+          <p>- Implemented a custom leaderboard system with persistent score saving and real-time ranking.<p>
+          <p>- Created a data-driven player naming and scoring system with memory retention between sessions.<p>
+          <p>- Designed cyclic enemy AI that orbits the scene and spawns projectiles dynamically.<p>
+          <p>- Built timed gameplay flow synchronized with the original Cantoni soundtrack.<p>
+          <p>- Composed and produced the game’s theme music, integrating it directly into gameplay rhythm and feedback.<p>
+          <p>- Focused on polished UX, ensuring the leaderboard, animations, and end-state transitions feel smooth and responsive.<p>
         </div>
 
-        <!-- Reflection -->
-        <div class="project-section" data-aos="fade-up">
+        <!-- Reflection -->                                
+        <div class="project-section" data-aos="fade-up" >   
           <h4>Reflection</h4>
-          <p>Meowrning Duty demonstrates my ability to ideate, prototype, and polish a complete experience within strict time constraints, while maintaining creativity, consistency, and humor. It’s a small game that embraces limitation, turning simplicity into personality.</p>
+          <p>Cantoni represents a balance of creative design and technical problem-solving, combining playful, accessible gameplay with system-level functionality like data persistence and score management.<p>
+          <p>This project allowed me to explore player engagement through competition, while refining skills in UI scripting, event logic, and timing-based gameplay, all within a tight, self-contained development cycle.<p>
         </div>
 
         <!-- Screenshots -->
         <div class="project-section project-images" data-aos="fade-up">
           <h4>Screenshots</h4>
-          <img src="assets/img/portfolio/MDgameplay.png" alt="Screenshot 1">
-          <img src="assets/img/portfolio/MDintro.png" alt="Screenshot 2">
-          <img src="assets/img/portfolio/MDmenu.png" alt="Screenshot 3">
+          <img src="assets/img/portfolio/Cantoni_gameplay.png" alt="Screenshot 1">
+          <img src="assets/img/portfolio/Cantoni_leaderboard.png" alt="Screenshot 2">
+          <img src="assets/img/portfolio/Cantoni_menu.png" alt="Screenshot 3">
         </div>
 
         <div class="text-center back-btn" data-aos="fade-up">
