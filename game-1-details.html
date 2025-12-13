@@ -56,7 +56,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -71,9 +70,8 @@
     <section id="project-details" class="portfolio section">
 
       <div class="container section-title" data-aos="fade-up">
-        <h2>Cantoni</h2>
-        <p>A simple, highscoring game built with Unreal Engine, utilizing a point and click mechanics and a leaderboard system.<p>
-        <p>This game was created as an experimental project</p>
+        <h2>The Aurora Snow Slingers</h2>
+        <p>A fast-paced, lighthearted action experience developed for the Aurora Game Jam 2025.<p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -81,93 +79,66 @@
         <!-- Gameplay Video -->
         <div class="ratio ratio-16x9 mb-4">
           <iframe 
-            src="https://player.vimeo.com/video/1128828093" 
-            title="Cantoni Gameplay"
+            src="https://player.vimeo.com/video/1146217697" 
+            title="The Aurora Snow Slingers Gameplay"
             frameborder="0" 
             allow="autoplay; fullscreen; picture-in-picture" 
             allowfullscreen>
           </iframe>
         </div>
 
+                <!-- Download Link -->
+        <div class="project-download">
+          <h3>Download Game</h3>
+          <p>You can download and play the game using the link below:</p>
+           <a href="https://topzone.itch.io/the-aurora-snow-slingers" target="_blank" class="btn btn-primary">
+          <i class="bi bi-download"></i> Download
+          </a>
+        </div>
 
         <!-- Overview -->
         <div class="project-section" data-aos="fade-up">
           <h4>Project Overview</h4>
-          <p>Cantoni is a lighthearted, casual point-and-click game built around a dynamic leaderboard system. The game was designed as both a fun interactive experience and a personal technical challenge to implement player data persistence and scoring mechanics within a complete gameplay loop.</p>
-          <p>The title “Cantoni” takes its name from the original soundtrack composed for the game, a lively one-minute track that sets the rhythm and tone for this cheerful, slightly chaotic world where happiness is constantly under attack.</p>
+          <p>The Aurora Snow Slingers is a concise, lighthearted action experience developed for the Aurora Game Jam, part of the REPLAY Game Design Master’s Degree Program.</p>
         </div>
 
         <!-- Gameplay Concept -->
         <div class="project-section" data-aos="fade-up">
           <h4>Gameplay Concept</h4>
-          <p>At the start of each session, players enter their name, which the game saves and remembers for later ranking on the leaderboard. Once the game begins, players are introduced to a fictional, upbeat world where three joyful friends dance at the center of the screen, simply trying to stay happy.</p>
-          <p>Their peace, however, is constantly disrupted by a mischievous bubble-shooting creature that orbits around them, launching bubbles from every direction. The player’s sole task is to click on these bubbles before they reach the friends, popping them to protect the group’s happiness level.</p>
-          <p>Each bubble popped earns a score, while missed ones reduce happiness. The challenge continues for the full duration of the Cantoni music track, roughly one minute of fast-paced, rhythmic gameplay. When the music ends, the game stops spawning bubbles and transitions to a results screen showing the player’s final score and ranking.</p>
-        </div>
-
-        <!-- Leaderboard/Progression-->
-        <div class="project-section" data-aos="fade-up">
-          <h4>Leaderboard & Progression</h4>
-          <p>One of the game’s key features is its persistent leaderboard system.</p>
-          <p>After every session:</p>
-          <p>- The player’s name and score are automatically saved.</p>
-          <p>- Scores are ranked in real-time, showing only the top 10 players, the "Top Poppers"</p>
-          <p>- Returning players can see their new scores compared with previous ones, encouraging replayability and friendly competition.</p>
-          <p>The leaderboard implementation was the project’s primary learning goal, showcasing data saving, player tracking, and score sorting logic within a self-contained Unreal Engine project.</p>
+          <p>Guided by the theme “Echo of the Polar Night,” the project interprets the idea of an echo not as sound alone, but as the reverberation of joyful childhood memories, specifically the bright laughter and spirited energy of kids engaged in a friendly snowball fight beneath the dancing aurora.</p>
+          <p>The game is designed to evoke a sense of nostalgia, presenting a fictional yet emotionally familiar moment: friends playing in the snow during the long polar night, illuminated by the aurora’s movement overhead.</p>
+          <p>Players enter a circular snow-fight arena populated with snowmen, igloos, and snow walls that provide tactical cover. Within this arena, the game attempts to emulate a simplified form of real-world snowball-fight mechanics. The player can run, collect individual snowballs from the ground, and manually launch them toward an opponent. This design encourages deliberate, skill-based play, requiring each throw to be purposeful rather than relying on rapid, repeated attacks.</p>
         </div>
 
         <!-- Design/Aesthetics -->
         <div class="project-section" data-aos="fade-up">
           <h4>Design & Aesthetics</h4>
-          <p>- Visual Style: Simple and minimal color, focusing on clarity of motion for quick reaction gameplay.</p>
-          <p>- Character Design: Three expressive, looping characters represent joy and friendship at the game’s heart.</p>
-          <p>- Antagonist: A spiky creature that moves cyclically along the screen’s edges, dynamically spawning bubbles toward the center.</p>
-          <p>- Audio: Original background track “Cantoni” composed to synchronize with gameplay pacing, giving the experience rhythm and personality.</p>
-          <p>- UI: Clean interface for player input, score tracking, and leaderboard display.<p>
+          <p>- Visual Style: Vibrant and colorful, with the aurora in the sky to beautify the scenery and also serve as the main source of lighting to the environment.</p>
+          <p>- Character Design: Character reused for player's character, AI, and background NPCs.</p>
+          <p>- Audio: A fast-paced action music that drives the energy of the gameplay.</p>
+          <p>- UI: UI design that clearly communicates to the player.<p>
         </div>
 
          <!-- Development Details -->
         <div class="project-section" data-aos="fade-up">
           <h4>Development Details</h4>
           <p>- Engine: Unreal Engine 5.5.4</p>
-          <p>- Development Focus: Gameplay systems, UI/UX, and persistent leaderboard integration.<p>
-          <p>- Role: Solo developer, responsible for game design, programming, sound composition, and visual direction.<p>
+          <p>- Development Focus: Snowball projectiles mechanics; health system; difficulty mode selection tied to AI's behaviour trees logic.<p>
+          <p>- Role: Responsible for 3d assets creation, game design, and gameplay and UI programming.<p>
+          <p>- Dev Status: Current prototype is a player-vs-AI mode. Future update to include a player-vs-player mode.<p></p>
           <p>- Platforms: PC (Windows), with potential scalability for web or mobile builds.<p>
-        </div>
-
-        <!-- Technical & Creative Highlights -->
-        <div class="project-section" data-aos="fade-up">
-          <h4>Technical & Creative Highlights</h4>
-          <p>- Implemented a custom leaderboard system with persistent score saving and real-time ranking.<p>
-          <p>- Created a data-driven player naming and scoring system with memory retention between sessions.<p>
-          <p>- Designed cyclic enemy AI that orbits the scene and spawns projectiles dynamically.<p>
-          <p>- Built timed gameplay flow synchronized with the original Cantoni soundtrack.<p>
-          <p>- Composed and produced the game’s theme music, integrating it directly into gameplay rhythm and feedback.<p>
-          <p>- Focused on polished UX, ensuring the leaderboard, animations, and end-state transitions feel smooth and responsive.<p>
-        </div>
-
-        <!-- Reflection -->                                
-        <div class="project-section" data-aos="fade-up" >   
-          <h4>Reflection</h4>
-          <p>Cantoni represents a balance of creative design and technical problem-solving, combining playful, accessible gameplay with system-level functionality like data persistence and score management.<p>
-          <p>This project allowed me to explore player engagement through competition, while refining skills in UI scripting, event logic, and timing-based gameplay, all within a tight, self-contained development cycle.<p>
         </div>
 
         <!-- Screenshots -->
         <div class="project-section project-images" data-aos="fade-up">
           <h4>Screenshots</h4>
-          <img src="assets/img/portfolio/Cantoni_gameplay.png" alt="Screenshot 1">
-          <img src="assets/img/portfolio/Cantoni_leaderboard.png" alt="Screenshot 2">
-          <img src="assets/img/portfolio/Cantoni_menu.png" alt="Screenshot 3">
-        </div>
-
-        <!-- Download Link -->
-        <div class="project-download">
-          <h3>Download Game</h3>
-          <p>You can download and play the game using the link below:</p>
-           <a href="https://topzone.itch.io/cantoni" target="_blank" class="btn btn-primary">
-          <i class="bi bi-download"></i> Download
-          </a>
+          <img src="assets/img/portfolio/aurora_snow_slingers/title.png" alt="Screenshot 1">
+          <img src="assets/img/portfolio/aurora_snow_slingers/screenshot.png" alt="Screenshot 2">
+          <img src="assets/img/portfolio/aurora_snow_slingers/Reference Image of Game.png" alt="Screenshot 3">
+          <img src="assets/img/portfolio/aurora_snow_slingers/pause screen.png" alt="Screenshot 4">
+          <img src="assets/img/portfolio/aurora_snow_slingers/game play.png" alt="Screenshot 5">
+          <img src="assets/img/portfolio/aurora_snow_slingers/environment.png" alt="Screenshot 6">
+          <img src="assets/img/portfolio/aurora_snow_slingers/difficulty select.png" alt="Screenshot 7">
         </div>
 
         <div class="text-center back-btn" data-aos="fade-up">
