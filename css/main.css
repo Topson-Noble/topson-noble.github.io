@@ -2853,3 +2853,16 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*Card*/
+.portfolio-card {
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.02);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.35);
+}
