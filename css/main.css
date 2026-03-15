@@ -2951,3 +2951,54 @@ section,
 .portfolio-card p {
   flex-grow: 1;
 }
+
+/* ===== Project Detail Cards Grid ===== */
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    border: 2px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.project-card h4 {
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ===== Project Images Grid ===== */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-images img {
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Optional: back button spacing */
+.back-btn {
+    margin-top: 2.5rem;
+}
