@@ -25,24 +25,76 @@
   <link href="/assets/css/main.css" rel="stylesheet">
 
   <style>
+    /* ── Video ── */
     .project-video iframe {
       width: 100%;
       height: 500px;
       border-radius: 10px;
     }
 
-    .project-section {
+    /* ── Description Grid ── */
+    .description-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
       margin-bottom: 3rem;
     }
 
-    .project-images img {
-      width: 100%;
-      margin-bottom: 1rem;
+    @media (max-width: 991px) {
+      .description-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 575px) {
+      .description-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .desc-card {
+      height: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 10px;
+      padding: 1.1rem 1rem 1rem 1.1rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: transparent;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.5) transparent;
+    }
+
+    .desc-card::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .desc-card::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .desc-card::-webkit-scrollbar-thumb {
+      background-color: rgba(255,255,255,0.45);
       border-radius: 10px;
     }
 
+    .desc-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+      color: #ffffff;
+    }
+
+    .desc-card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── Back button spacing ── */
     .back-btn {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -68,6 +120,7 @@
 
     <section id="project-details" class="portfolio section">
 
+      <!-- Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Creature Gameplay Animation Reel</h2>
         <p>A compilation of my creature gameplay animations.</p>
@@ -75,29 +128,35 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-       <!-- Demo Reel Video -->
+        <!-- Demo Reel Video -->
         <div class="ratio ratio-16x9 mb-4">
-          <iframe 
-            src="https://player.vimeo.com/video/1173742845" 
+          <iframe
+            src="https://player.vimeo.com/video/1173742845"
             title="Creature Gameplay Animation Reel"
-            frameborder="0" 
-            allow="autoplay; fullscreen; picture-in-picture" 
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen>
           </iframe>
         </div>
 
-        <!-- Overview -->
-        <div class="project-section" data-aos="fade-up">
-          <h4>Project Overview</h4>
-          <p>This reel is a compilation of my creature gameplay animations, focusing on the application of core animation principles to convey believable weight, personality, and movement. </p>
-        </div>
+        <!-- ── Description Grid ── -->
+        <div class="description-grid" data-aos="fade-up">
 
-         <!-- Narrative Concept -->
-        <div class="project-section" data-aos="fade-up">
-          <h4>Technical Details</h4>
-          <p>All animations are keyframe-animated, created in Maya, and implemented in Unreal Engine.</p>
-        </div>
+          <!-- Project Overview -->
+          <div class="desc-card">
+            <h4>Project Overview</h4>
+            <p>This reel is a compilation of my creature gameplay animations, focusing on the application of core animation principles to convey believable weight, personality, and movement.</p>
+          </div>
 
+          <!-- Technical Details -->
+          <div class="desc-card">
+            <h4>Technical Details</h4>
+            <p>All animations are keyframe-animated, created in Maya, and implemented in Unreal Engine.</p>
+          </div>
+
+        </div><!-- /description-grid -->
+
+        <!-- Back Button -->
         <div class="text-center back-btn" data-aos="fade-up">
           <a href="3d-projects.html" class="btn btn-primary">Back to 3D Projects</a>
         </div>
@@ -113,14 +172,12 @@
       <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
       </div>
-
-      <!-- Customized Social Links -->
       <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
-          <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
-          <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
       </div>
     </div>
   </footer>
