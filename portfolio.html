@@ -31,6 +31,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="portfolio.html" class="active">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -45,13 +46,15 @@
 
     <!-- Portfolio Categories Section -->
     <section id="portfolio categories" class="portfolio categories section" 
-  style="background: url('assets/img/bgrender2.jpg') center center/cover no-repeat; 
-         background-position: center 0.2px;
-         position: relative; 
-         overflow: hidden;">
+    style="
+        background: url('assets/img/bgrender2.jpg') center center/cover no-repeat !important; 
+        min-height: 100vh; 
+        position: relative; 
+        overflow: hidden;"
+    data-aos=""> <!-- remove any AOS effect on the hero to render immediately -->
 
-  <!-- dark overlay (place this immediately inside the section) -->
-  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.50); backdrop-filter: blur(0px); z-index:0;"></div>
+    <!-- dark overlay -->
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter: blur(0px); z-index:0;"></div>
 
   <!-- change the container so content sits above overlay -->
   <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
