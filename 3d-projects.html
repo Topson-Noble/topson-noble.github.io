@@ -26,7 +26,6 @@
   <link href="assets/css/main.css?v=3" rel="stylesheet">
 
   <style>
-    /* Add border and hover effect for 3D project cards */
     .portfolio-card {
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 12px;
@@ -34,6 +33,9 @@
       transition: transform 0.35s ease, border-color 0.35s ease;
       background: rgba(255, 255, 255, 0.03);
       cursor: pointer;
+      /* Pin button to bottom */
+      display: flex;
+      flex-direction: column;
     }
 
     .portfolio-card:hover {
@@ -51,6 +53,11 @@
 
     .portfolio-card:hover .portfolio-img img {
       transform: scale(1.08);
+    }
+
+    /* Push the View button to the bottom of every card */
+    .portfolio-card .btn {
+      margin-top: auto;
     }
   </style>
 </head>
