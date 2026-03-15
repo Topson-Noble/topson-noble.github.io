@@ -4,162 +4,120 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Fantasy Adventure Game - Cantoni</title>
+  <title>Cantoni - Game Project</title>
 
   <!-- Favicons -->
-  <link href="/assets/img/favicon.png" rel="icon">
-  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS -->
-  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS -->
-  <link href="/assets/css/main.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
 </head>
 
 <body class="portfolio-page">
 
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
     </div>
   </header>
 
+  <!-- Main Content -->
   <main class="main">
-
     <section id="project-details" class="portfolio section">
-
       <div class="container section-title" data-aos="fade-up">
         <h2>Cantoni</h2>
-        <p>A simple, highscoring game built with Unreal Engine, utilizing point-and-click mechanics and a leaderboard
-          system.</p>
+        <p>A simple, highscoring game built with Unreal Engine, utilizing point-and-click mechanics and a leaderboard system.</p>
+        <p>This game was created as an experimental project.</p>
       </div>
 
-      <div class="container project-card-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <!-- Project Overview -->
-        <div class="project-card">
+        <!-- Gameplay Video -->
+        <div class="ratio ratio-16x9 mb-4">
+          <iframe 
+            src="https://player.vimeo.com/video/1128828093" 
+            title="Cantoni Gameplay"
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Project Sections -->
+        <div class="project-section" data-aos="fade-up">
           <h4>Project Overview</h4>
-          <div class="scrollable-card">
-            <p>Cantoni is a lighthearted, casual point-and-click game built around a dynamic leaderboard system. The
-              game was designed as both a fun interactive experience and a personal technical challenge to implement
-              player data persistence and scoring mechanics within a complete gameplay loop.</p>
-            <p>The title “Cantoni” takes its name from the original soundtrack composed for the game, a lively one-minute
-              track that sets the rhythm and tone for this cheerful, slightly chaotic world where happiness is constantly
-              under attack.</p>
-          </div>
+          <p>Cantoni is a lighthearted, casual point-and-click game built around a dynamic leaderboard system. The game was designed as both a fun interactive experience and a personal technical challenge to implement player data persistence and scoring mechanics within a complete gameplay loop.</p>
         </div>
 
-        <!-- Gameplay Concept -->
-        <div class="project-card">
+        <div class="project-section" data-aos="fade-up">
           <h4>Gameplay Concept</h4>
-          <div class="scrollable-card">
-            <p>Players enter their name, which the game remembers for later leaderboard ranking. During gameplay, players
-              click on mischievous bubbles before they reach the three joyful friends at the center of the screen.</p>
-            <p>Each bubble popped earns points, while missed ones reduce happiness. Gameplay lasts one minute, synced to
-              the Cantoni soundtrack.</p>
-          </div>
+          <p>Players enter their name at the start of each session, which the game remembers for ranking on the leaderboard. The goal is to pop bubbles before they reach the three joyful characters in the center, scoring points and protecting happiness.</p>
         </div>
 
-        <!-- Leaderboard & Progression -->
-        <div class="project-card">
+        <div class="project-section" data-aos="fade-up">
           <h4>Leaderboard & Progression</h4>
-          <div class="scrollable-card">
-            <p>Persistent leaderboard shows top 10 scores ("Top Poppers") with real-time ranking. Returning players can
-              compare their new score with previous ones to encourage replayability.</p>
-          </div>
+          <p>Scores are saved and ranked in real-time. Only the top 10 players ("Top Poppers") are shown. Returning players can compare scores and replay for improvement.</p>
         </div>
 
-        <!-- Design & Aesthetics -->
-        <div class="project-card">
+        <div class="project-section" data-aos="fade-up">
           <h4>Design & Aesthetics</h4>
-          <div class="scrollable-card">
-            <p>- Visual Style: Clear motion-focused minimal design.</p>
-            <p>- Characters: Three expressive looping friends.</p>
-            <p>- Antagonist: Spiky bubble-shooting creature.</p>
-            <p>- Audio: Original background track synchronized with gameplay.</p>
-            <p>- UI: Clean interface for player input, score tracking, and leaderboard display.</p>
-          </div>
+          <p>Simple, clear visuals for quick-reaction gameplay. Expressive looping characters represent joy, with a spiky antagonist that shoots bubbles. Original soundtrack “Cantoni” sets the rhythm for gameplay. Clean UI for input, scores, and leaderboard display.</p>
         </div>
 
-        <!-- Development Details -->
-        <div class="project-card">
+        <div class="project-section" data-aos="fade-up">
           <h4>Development Details</h4>
-          <div class="scrollable-card">
-            <p>- Engine: Unreal Engine 5.5.4</p>
-            <p>- Role: Solo developer – design, programming, audio, visuals.</p>
-            <p>- Platforms: PC (Windows)</p>
-          </div>
+          <p>Engine: Unreal Engine 5.5.4</p>
+          <p>Role: Solo developer — design, programming, sound, and visual direction.</p>
+          <p>Platform: PC (Windows)</p>
         </div>
 
-        <!-- Technical & Creative Highlights -->
-        <div class="project-card">
-          <h4>Technical & Creative Highlights</h4>
-          <div class="scrollable-card">
-            <p>- Custom leaderboard system with persistent score saving.</p>
-            <p>- Data-driven player naming and scoring system.</p>
-            <p>- Enemy AI spawning projectiles dynamically.</p>
-            <p>- Timed gameplay synchronized with soundtrack.</p>
-          </div>
+        <!-- Screenshots -->
+        <div class="project-section project-images" data-aos="fade-up">
+          <h4>Screenshots</h4>
+          <img src="assets/img/portfolio/Cantoni_gameplay.png" alt="Screenshot 1">
+          <img src="assets/img/portfolio/Cantoni_leaderboard.png" alt="Screenshot 2">
+          <img src="assets/img/portfolio/Cantoni_menu.png" alt="Screenshot 3">
         </div>
 
-        <!-- Reflection -->
-        <div class="project-card">
-          <h4>Reflection</h4>
-          <div class="scrollable-card">
-            <p>Cantoni combines creative design and technical problem-solving. This project refined skills in UI
-              scripting, event logic, and timing-based gameplay within a self-contained development cycle.</p>
-          </div>
+        <!-- Back Button -->
+        <div class="text-center back-btn" data-aos="fade-up">
+          <a href="game-projects.html" class="btn btn-primary">Back to Game Projects</a>
         </div>
 
       </div>
-
-      <!-- Gameplay Video -->
-      <div class="container mt-4" data-aos="fade-up">
-        <div class="ratio ratio-16x9">
-          <iframe src="https://player.vimeo.com/video/1128828093" title="Cantoni Gameplay" frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <!-- Screenshots -->
-      <div class="container project-images" data-aos="fade-up">
-        <img src="/assets/img/portfolio/Cantoni_gameplay.png" alt="Screenshot 1" class="modal-trigger">
-        <img src="/assets/img/portfolio/Cantoni_leaderboard.png" alt="Screenshot 2" class="modal-trigger">
-        <img src="/assets/img/portfolio/Cantoni_menu.png" alt="Screenshot 3" class="modal-trigger">
-      </div>
-
-      <!-- Back Button -->
-      <div class="text-center back-btn" data-aos="fade-up">
-        <a href="/game-projects.html" class="btn btn-primary">Back to Game Projects</a>
-      </div>
-
     </section>
-
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="footer">
-    <div class="container text-center">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved</span></p>
+      </div>
+
       <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
-        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i
-            class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
         <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
         <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -168,15 +126,13 @@
     </div>
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS -->
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/aos/aos.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
-  <!-- Main JS -->
-  <script src="/assets/js/main.js"></script>
 </body>
-
 </html>
