@@ -25,24 +25,113 @@
   <link href="/assets/css/main.css" rel="stylesheet">
 
   <style>
-    .project-video iframe {
-      width: 100%;
-      height: 500px;
-      border-radius: 10px;
+    /* ── Screenshot Grid ── */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 0;
     }
 
+    @media (max-width: 767px) {
+      .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .screenshot-item {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1.5px solid #c8c8d0;
+      cursor: pointer;
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* ── Lightbox Overlay ── */
+    #lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-frame {
+      position: relative;
+      max-width: 72vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.55);
+      background: #000;
+    }
+
+    .lightbox-frame img {
+      display: block;
+      max-width: 72vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(0,0,0,0.9);
+    }
+
+    /* ── Section spacing ── */
     .project-section {
       margin-bottom: 3rem;
     }
 
-    .project-images img {
-      width: 100%;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-    }
-
+    /* ── Back button spacing ── */
     .back-btn {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -68,58 +157,100 @@
 
     <section id="project-details" class="portfolio section">
 
+      <!-- Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Lighting/Rendering Works.</h2>
         <p>This is a showcase of my lighting and rendering works.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        
+
         <!-- New Beginning -->
-        <div class="project-section project-images" data-aos="fade-up">
+        <div class="project-section" data-aos="fade-up">
           <h4>NEW BEGINNING</h4>
-           <p>The following stills showcase my lighting and rendering work from the New Beginning project. The scenes were rendered using V-Ray, incorporating a combination of V-Ray light shapes, environmental lighting, and volumetric effects.</p>
-          <img src="assets/img/new_beginning/shot 01 test.png" alt="Screenshot 1">
-          <img src="assets/img/new_beginning/shot 03 test.png" alt="Screenshot 2">
-          <img src="assets/img/new_beginning/Void_Render_00.png" alt="Screenshot 3">
+          <p>The following stills showcase my lighting and rendering work from the New Beginning project. The scenes were rendered using V-Ray, incorporating a combination of V-Ray light shapes, environmental lighting, and volumetric effects.</p>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/new_beginning/shot 01 test.png" alt="New Beginning Shot 01">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/new_beginning/shot 03 test.png" alt="New Beginning Shot 03">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/new_beginning/Void_Render_00.png" alt="New Beginning Void Render">
+            </div>
+          </div>
         </div>
 
-         <!-- Environmental lighting -->
-        <div class="project-section project-images" data-aos="fade-up">
+        <!-- Environmental Lighting -->
+        <div class="project-section" data-aos="fade-up">
           <h4>ENVIRONMENTAL LIGHTING.</h4>
-           <p>These are examples of environmental lighting and rendering work created using the Arnold render engine. The primary focus of this project was to achieve a strong cinematic composition.</p>
-          <img src="assets/img/bgrender2.png" alt="Screenshot 1">
-          <img src="assets/img/bgrender4.png" alt="Screenshot 2">
-          <img src="assets/img/bgrender7.png" alt="Screenshot 3">
-          <img src="assets/img/simple scenery.png" alt="Screenshot 4">
-          <img src="assets/img/bgrender5.png" alt="Screenshot 5">
+          <p>These are examples of environmental lighting and rendering work created using the Arnold render engine. The primary focus of this project was to achieve a strong cinematic composition.</p>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/bgrender2.png" alt="Environmental Render 2">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/bgrender4.png" alt="Environmental Render 4">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/bgrender7.png" alt="Environmental Render 7">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/simple scenery.png" alt="Simple Scenery">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/bgrender5.png" alt="Environmental Render 5">
+            </div>
+          </div>
         </div>
 
-        <!-- Scenery -->
-        <div class="project-section project-images" data-aos="fade-up">
+        <!-- Scenery Lighting -->
+        <div class="project-section" data-aos="fade-up">
           <h4>SCENERY LIGHTING</h4>
-           <p>The following images showcase scenery lighting work created using Blender Cycles. I modeled the environment, while the character was a free rig downloaded online and posed within the scene.</p>
-          <img src="assets/img/test render 00.png" alt="Screenshot 1">
-          <img src="assets/img/test render 01.png" alt="Screenshot 2">
+          <p>The following images showcase scenery lighting work created using Blender Cycles. I modeled the environment, while the character was a free rig downloaded online and posed within the scene.</p>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/test render 00.png" alt="Scenery Render 00">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/test render 01.png" alt="Scenery Render 01">
+            </div>
+          </div>
         </div>
 
-         <!-- The Bull and Beauty -->
-        <div class="project-section project-images" data-aos="fade-up">
+        <!-- The Bull and Beauty -->
+        <div class="project-section" data-aos="fade-up">
           <h4>THE BULL AND BEAUTY.</h4>
-           <p>This piece focuses on creating a sense of connection between two characters while experimenting with scale and background volumetric lighting. The rendering was completed using V-Ray.</p>
-          <img src="assets/img/bgrender3.png" alt="Screenshot 1">
+          <p>This piece focuses on creating a sense of connection between two characters while experimenting with scale and background volumetric lighting. The rendering was completed using V-Ray.</p>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/bgrender3.png" alt="The Bull and Beauty">
+            </div>
+          </div>
         </div>
 
-        <!-- Environmental lighting -->
-        <div class="project-section project-images" data-aos="fade-up">
+        <!-- Stage Lighting -->
+        <div class="project-section" data-aos="fade-up">
           <h4>STAGE LIGHTING.</h4>
-           <p>These are examples of stage lighting and rendering work created using the Arnold render engine. The goal of this project was to experiment with the contrast between warm and cool lighting.</p>
-          <img src="assets/img/closeup cold.png" alt="Screenshot 1">
-          <img src="assets/img/closeup warm version.png" alt="Screenshot 2">
-          <img src="assets/img/cold version.png" alt="Screenshot 3">
-          <img src="assets/img/warm version.png" alt="Screenshot 4">
+          <p>These are examples of stage lighting and rendering work created using the Arnold render engine. The goal of this project was to experiment with the contrast between warm and cool lighting.</p>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/closeup cold.png" alt="Closeup Cold">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/closeup warm version.png" alt="Closeup Warm">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/cold version.png" alt="Cold Version">
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="assets/img/warm version.png" alt="Warm Version">
+            </div>
+          </div>
         </div>
 
+        <!-- Back Button -->
         <div class="text-center back-btn" data-aos="fade-up">
           <a href="3d-projects.html" class="btn btn-primary">Back to 3D Projects</a>
         </div>
@@ -130,19 +261,25 @@
 
   </main>
 
+  <!-- ── Lightbox Overlay ── -->
+  <div id="lightbox-overlay" onclick="handleOverlayClick(event)">
+    <div class="lightbox-frame" id="lightbox-frame">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
       </div>
-
-      <!-- Customized Social Links -->
       <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
-          <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
-          <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
       </div>
     </div>
   </footer>
@@ -154,6 +291,34 @@
   <script src="/assets/vendor/aos/aos.js"></script>
   <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/assets/js/main.js"></script>
+
+  <script>
+    function openLightbox(cardEl) {
+      const src = cardEl.querySelector('img').src;
+      const alt = cardEl.querySelector('img').alt;
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt;
+      document.getElementById('lightbox-overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-overlay').classList.remove('active');
+      document.getElementById('lightbox-img').src = '';
+      document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('lightbox-overlay')) {
+        closeLightbox();
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
