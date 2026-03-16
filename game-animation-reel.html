@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Character Animation Project - 3D Project</title>
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ── Video ── */
+    .project-video iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+    }
+
+    /* ── Description Grid ── */
+    .description-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 991px) {
+      .description-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 575px) {
+      .description-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .desc-card {
+      height: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 10px;
+      padding: 1.1rem 1rem 1rem 1.1rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: transparent;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.5) transparent;
+    }
+
+    .desc-card::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .desc-card::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .desc-card::-webkit-scrollbar-thumb {
+      background-color: rgba(255,255,255,0.45);
+      border-radius: 10px;
+    }
+
+    .desc-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+      color: #ffffff;
+    }
+
+    .desc-card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── Back button spacing ── */
+    .back-btn {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body class="portfolio-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="project-details" class="portfolio section">
+
+      <!-- Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Game Animation Reel</h2>
+        <p>A compilation of my game animations.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Demo Reel Video -->
+        <div class="ratio ratio-16x9 mb-4">
+          <iframe
+            src="https://player.vimeo.com/video/1174081624"
+            title="Game Animation Reel"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- ── Description Grid ── -->
+        <div class="description-grid" data-aos="fade-up">
+
+          <!-- Project Overview -->
+          <div class="desc-card">
+            <h4>Project Overview</h4>
+            <p>This reel showcases a selection of gameplay animations developed across various game projects. The animations focus on delivering responsive movement and clear character performance suitable for real-time gameplay.</p>
+          </div>
+
+          <!-- Technical Details -->
+          <div class="desc-card">
+            <h4>Technical Details</h4>
+            <p>All animations are keyframe-animated, created in Maya, and implemented in Unreal Engine and Unity.</p>
+          </div>
+
+        </div><!-- /description-grid -->
+
+        <!-- Back Button -->
+        <div class="text-center back-btn" data-aos="fade-up">
+          <a href="3d-projects.html" class="btn btn-primary">Back to 3D Projects</a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+</body>
+</html>
