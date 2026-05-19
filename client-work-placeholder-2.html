@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Client Work 2 — Temitope Falade</title>
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <style>
+    /* === DROPDOWN NAV === */
+    .navmenu ul li.has-dropdown { position: relative; }
+    .navmenu ul li.has-dropdown .dropdown-panel {
+      display: none; position: absolute; top: 100%; left: 0;
+      min-width: 230px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 6px 0; z-index: 9999; list-style: none; margin: 0;
+    }
+    .navmenu ul li.has-dropdown:hover .dropdown-panel,
+    .navmenu ul li.has-dropdown:focus-within .dropdown-panel { display: block; }
+    .navmenu ul li.has-dropdown .dropdown-panel li a {
+      display: block; padding: 9px 20px; font-size: 0.875rem;
+      color: #444; white-space: nowrap; transition: background 0.15s, color 0.15s; text-decoration: none;
+    }
+    .navmenu ul li.has-dropdown .dropdown-panel li a:hover { background: #f5f5f5; color: #000; }
+    .navmenu ul li.has-dropdown > a::after { content: " \25BE"; font-size: 0.65rem; opacity: 0.6; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub { position: relative; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub > a::after { content: " \203A"; float: right; font-size: 0.9rem; opacity: 0.5; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub .sub-panel {
+      display: none; position: absolute; top: 0; left: 100%;
+      min-width: 200px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 6px 0; list-style: none; margin: 0; z-index: 10000;
+    }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub:hover .sub-panel { display: block; }
+    .dropdown-panel .dropdown-divider-line { height: 1px; background: #ebebeb; margin: 5px 0; }
+    /* === VIDEO ===*/
+    .project-video iframe { width: 100%; height: 500px; border-radius: 10px; }
+    /* === DESCRIPTION GRID === */
+    .description-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
+    @media (max-width: 991px) { .description-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 575px) { .description-grid { grid-template-columns: 1fr; } }
+    .desc-card {
+      height: 260px; border: 1px solid rgba(255,255,255,0.75); border-radius: 10px;
+      padding: 1.1rem 1rem 1rem 1.1rem; overflow-y: auto; overflow-x: hidden;
+      background: transparent; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.5) transparent;
+    }
+    .desc-card::-webkit-scrollbar { width: 6px; }
+    .desc-card::-webkit-scrollbar-track { background: transparent; }
+    .desc-card::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.45); border-radius: 10px; }
+    .desc-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.55rem; color: #ffffff; }
+    .desc-card p { font-size: 0.875rem; line-height: 1.6; color: #ffffff; margin-bottom: 0.4rem; }
+    .back-btn { margin-top: 2.5rem; margin-bottom: 1rem; }
+
+  </style>
+</head>
+
+<body class="portfolio-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#">Client Works</a>
+            <ul class="dropdown-panel">
+              <li><a href="client-work-placeholder-1.html">Client Work Title 1</a></li>
+              <li><a href="client-work-placeholder-2.html">Client Work Title 2</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Portfolio</a>
+            <ul class="dropdown-panel">
+              <li><a href="creature-gameplay-animation-reel.html">Creature Animation Reel</a></li>
+              <li><a href="game-animation-reel.html">Game Animation Reel</a></li>
+              <li><a href="3d-animation-demo-reel.html">Character Animation Reel</a></li>
+              <li class="dropdown-divider-line"></li>
+              <li class="has-sub">
+                <a href="#">Personal Works</a>
+                <ul class="sub-panel">
+                  <li><a href="new-beginning.html">New Beginning</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="project-details" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <!--
+          UPDATE: Replace "Client Work Title 2" with the real project name.
+          Replace the YouTube embed ID (currently a placeholder) with the real video ID.
+          The YouTube video ID is the part after "watch?v=" in the video URL.
+          e.g.  https://www.youtube.com/watch?v=ABC123xyz  →  use  ABC123xyz
+        -->
+        <h2>Client Work Title 2</h2>
+        <p>[Brief one-line description of this project — update when ready.]</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="ratio ratio-16x9 mb-4">
+          <!--
+            Replace dQw4w9WgXcQ with your real YouTube video ID.
+          -->
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Client Work Title 2"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="description-grid" data-aos="fade-up">
+          <div class="desc-card">
+            <h4>Project Overview</h4>
+            <p>[Describe what this project was, who the client or studio was, and what the overall goal of the animation was. Update this when ready.]</p>
+          </div>
+          <div class="desc-card">
+            <h4>Technical Details</h4>
+            <p>[List the software used, pipeline details, deliverables, and any technical constraints or challenges. Update this when ready.]</p>
+          </div>
+          <div class="desc-card">
+            <h4>Role &amp; Contribution</h4>
+            <p>[Describe your specific role on the project — lead animator, supporting animator, technical animator, etc. What shots or sequences did you own? Update this when ready.]</p>
+          </div>
+          <div class="desc-card" style="grid-column: 1 / -1; height: 140px;">
+            <h4>Outcome</h4>
+            <p>[Describe the result — was it delivered on time, what was the client's feedback, where was it used (film, game, commercial, etc.)? Update this when ready.]</p>
+          </div>
+        </div>
+        <div class="text-center back-btn" data-aos="fade-up">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>&#169; <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+
+</body>
+</html>

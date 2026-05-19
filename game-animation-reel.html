@@ -4,98 +4,62 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Character Animation Project - 3D Project</title>
-
-  <!-- Favicons -->
+  <title>Game Animation Reel — Temitope Falade</title>
   <link href="/assets/img/favicon.png" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
   <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="/assets/css/main.css" rel="stylesheet">
-
   <style>
-    /* ── Video ── */
-    .project-video iframe {
-      width: 100%;
-      height: 500px;
-      border-radius: 10px;
+    /* === DROPDOWN NAV === */
+    .navmenu ul li.has-dropdown { position: relative; }
+    .navmenu ul li.has-dropdown .dropdown-panel {
+      display: none; position: absolute; top: 100%; left: 0;
+      min-width: 230px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 6px 0; z-index: 9999; list-style: none; margin: 0;
     }
-
-    /* ── Description Grid ── */
-    .description-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 3rem;
+    .navmenu ul li.has-dropdown:hover .dropdown-panel,
+    .navmenu ul li.has-dropdown:focus-within .dropdown-panel { display: block; }
+    .navmenu ul li.has-dropdown .dropdown-panel li a {
+      display: block; padding: 9px 20px; font-size: 0.875rem;
+      color: #444; white-space: nowrap; transition: background 0.15s, color 0.15s; text-decoration: none;
     }
-
-    @media (max-width: 991px) {
-      .description-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .navmenu ul li.has-dropdown .dropdown-panel li a:hover { background: #f5f5f5; color: #000; }
+    .navmenu ul li.has-dropdown > a::after { content: " \25BE"; font-size: 0.65rem; opacity: 0.6; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub { position: relative; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub > a::after { content: " \203A"; float: right; font-size: 0.9rem; opacity: 0.5; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub .sub-panel {
+      display: none; position: absolute; top: 0; left: 100%;
+      min-width: 200px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 6px 0; list-style: none; margin: 0; z-index: 10000;
     }
-
-    @media (max-width: 575px) {
-      .description-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub:hover .sub-panel { display: block; }
+    .dropdown-panel .dropdown-divider-line { height: 1px; background: #ebebeb; margin: 5px 0; }
+    /* === VIDEO ===*/
+    .project-video iframe { width: 100%; height: 500px; border-radius: 10px; }
+    /* === DESCRIPTION GRID === */
+    .description-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
+    @media (max-width: 991px) { .description-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 575px) { .description-grid { grid-template-columns: 1fr; } }
     .desc-card {
-      height: 260px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 10px;
-      padding: 1.1rem 1rem 1rem 1.1rem;
-      overflow-y: auto;
-      overflow-x: hidden;
-      background: transparent;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.5) transparent;
+      height: 260px; border: 1px solid rgba(255,255,255,0.75); border-radius: 10px;
+      padding: 1.1rem 1rem 1rem 1.1rem; overflow-y: auto; overflow-x: hidden;
+      background: transparent; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.5) transparent;
     }
+    .desc-card::-webkit-scrollbar { width: 6px; }
+    .desc-card::-webkit-scrollbar-track { background: transparent; }
+    .desc-card::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.45); border-radius: 10px; }
+    .desc-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.55rem; color: #ffffff; }
+    .desc-card p { font-size: 0.875rem; line-height: 1.6; color: #ffffff; margin-bottom: 0.4rem; }
+    .back-btn { margin-top: 2.5rem; margin-bottom: 1rem; }
 
-    .desc-card::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .desc-card::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .desc-card::-webkit-scrollbar-thumb {
-      background-color: rgba(255,255,255,0.45);
-      border-radius: 10px;
-    }
-
-    .desc-card h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.55rem;
-      color: #ffffff;
-    }
-
-    .desc-card p {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      color: #ffffff;
-      margin-bottom: 0.4rem;
-    }
-
-    /* ── Back button spacing ── */
-    .back-btn {
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }
   </style>
 </head>
 
@@ -103,66 +67,73 @@
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="has-dropdown">
+            <a href="#">Client Works</a>
+            <ul class="dropdown-panel">
+              <li><a href="client-work-placeholder-1.html">Client Work Title 1</a></li>
+              <li><a href="client-work-placeholder-2.html">Client Work Title 2</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Portfolio</a>
+            <ul class="dropdown-panel">
+              <li><a href="creature-gameplay-animation-reel.html">Creature Animation Reel</a></li>
+              <li><a href="game-animation-reel.html">Game Animation Reel</a></li>
+              <li><a href="3d-animation-demo-reel.html">Character Animation Reel</a></li>
+              <li class="dropdown-divider-line"></li>
+              <li class="has-sub">
+                <a href="#">Personal Works</a>
+                <ul class="sub-panel">
+                  <li><a href="new-beginning.html">New Beginning</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
   <main class="main">
 
     <section id="project-details" class="portfolio section">
-
-      <!-- Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Game Animation Reel</h2>
-        <p>A compilation of my game animations.</p>
+        <p>A compilation of game-ready character animations developed across various projects.</p>
       </div>
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <!-- Demo Reel Video -->
         <div class="ratio ratio-16x9 mb-4">
-          <iframe
-            src="https://player.vimeo.com/video/1191837606"
-            title="Game Animation Reel"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://player.vimeo.com/video/1191837606" title="Game Animation Reel"
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <!-- ── Description Grid ── -->
         <div class="description-grid" data-aos="fade-up">
-
-          <!-- Project Overview -->
           <div class="desc-card">
             <h4>Project Overview</h4>
-            <p>This reel showcases a selection of gameplay animations developed across various game projects. The animations focus on delivering responsive movement and clear character performance suitable for real-time gameplay.</p>
+            <p>This reel showcases gameplay animations developed across various game projects, focusing on responsive movement and clear character performance suitable for real-time gameplay. Covers locomotion systems, combat animations, idle behaviours, and cinematic cutscenes.</p>
           </div>
-
-          <!-- Technical Details -->
           <div class="desc-card">
             <h4>Technical Details</h4>
-            <p>All animations are keyframe-animated, created in Maya, and implemented in Unreal Engine and Unity.</p>
+            <p>All animations are keyframe-animated, created in Maya, and implemented in Unreal Engine and Unity. Animations were exported as FBX and integrated using animation state machines and blend trees for smooth, responsive real-time playback.</p>
           </div>
-
-        </div><!-- /description-grid -->
-
-        <!-- Back Button -->
-        <div class="text-center back-btn" data-aos="fade-up">
-          <a href="3d-projects.html" class="btn btn-primary">Back to 3D Projects</a>
+          <div class="desc-card">
+            <h4>Role &amp; Focus</h4>
+            <p>- Sole Animator on all featured shots.</p>
+            <p>- Designed locomotion sets, combat cycles, and cinematic sequences.</p>
+            <p>- Implemented and tested animations directly in Unreal Engine and Unity.</p>
+          </div>
+          <div class="desc-card" style="grid-column: 1 / -1; height: 140px;">
+            <h4>Objective</h4>
+            <p>To showcase my ability to deliver polished, game-ready animations that feel responsive and natural — covering the full range of character states required in a production game pipeline.</p>
+          </div>
         </div>
-
+        <div class="text-center back-btn" data-aos="fade-up">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
       </div>
-
     </section>
 
   </main>
@@ -170,7 +141,7 @@
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
+        <p>&#169; <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
         <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -184,11 +155,11 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/vendor/aos/aos.js"></script>
   <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/assets/js/main.js"></script>
+
 
 </body>
 </html>

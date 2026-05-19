@@ -4,196 +4,77 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Character Animation Project - 3D Project</title>
-
-  <!-- Favicons -->
+  <title>New Beginning — Temitope Falade</title>
   <link href="/assets/img/favicon.png" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
   <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="/assets/css/main.css" rel="stylesheet">
-
   <style>
-    /* ── Video ── */
-    .project-video iframe {
-      width: 100%;
-      height: 500px;
-      border-radius: 10px;
+    /* === DROPDOWN NAV === */
+    .navmenu ul li.has-dropdown { position: relative; }
+    .navmenu ul li.has-dropdown .dropdown-panel {
+      display: none; position: absolute; top: 100%; left: 0;
+      min-width: 230px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 6px 0; z-index: 9999; list-style: none; margin: 0;
     }
-
-    /* ── Description Grid ── */
-    .description-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 3rem;
+    .navmenu ul li.has-dropdown:hover .dropdown-panel,
+    .navmenu ul li.has-dropdown:focus-within .dropdown-panel { display: block; }
+    .navmenu ul li.has-dropdown .dropdown-panel li a {
+      display: block; padding: 9px 20px; font-size: 0.875rem;
+      color: #444; white-space: nowrap; transition: background 0.15s, color 0.15s; text-decoration: none;
     }
-
-    @media (max-width: 991px) {
-      .description-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .navmenu ul li.has-dropdown .dropdown-panel li a:hover { background: #f5f5f5; color: #000; }
+    .navmenu ul li.has-dropdown > a::after { content: " \25BE"; font-size: 0.65rem; opacity: 0.6; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub { position: relative; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub > a::after { content: " \203A"; float: right; font-size: 0.9rem; opacity: 0.5; }
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub .sub-panel {
+      display: none; position: absolute; top: 0; left: 100%;
+      min-width: 200px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 6px 0; list-style: none; margin: 0; z-index: 10000;
     }
-
-    @media (max-width: 575px) {
-      .description-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub:hover .sub-panel { display: block; }
+    .dropdown-panel .dropdown-divider-line { height: 1px; background: #ebebeb; margin: 5px 0; }
+    /* === VIDEO ===*/
+    .project-video iframe { width: 100%; height: 500px; border-radius: 10px; }
+    /* === DESCRIPTION GRID === */
+    .description-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
+    @media (max-width: 991px) { .description-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 575px) { .description-grid { grid-template-columns: 1fr; } }
     .desc-card {
-      height: 260px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 10px;
-      padding: 1.1rem 1rem 1rem 1.1rem;
-      overflow-y: auto;
-      overflow-x: hidden;
-      background: transparent;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.5) transparent;
+      height: 260px; border: 1px solid rgba(255,255,255,0.75); border-radius: 10px;
+      padding: 1.1rem 1rem 1rem 1.1rem; overflow-y: auto; overflow-x: hidden;
+      background: transparent; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.5) transparent;
     }
-
-    .desc-card::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .desc-card::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .desc-card::-webkit-scrollbar-thumb {
-      background-color: rgba(255,255,255,0.45);
-      border-radius: 10px;
-    }
-
-    .desc-card h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.55rem;
-      color: #ffffff;
-    }
-
-    .desc-card p {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      color: #ffffff;
-      margin-bottom: 0.4rem;
-    }
-
-    /* ── Screenshot Grid ── */
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 767px) {
-      .screenshot-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .screenshot-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .screenshot-item {
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 10px;
-      border: 1.5px solid #c8c8d0;
-      cursor: pointer;
-    }
-
-    .screenshot-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .screenshot-item:hover img {
-      transform: scale(1.06);
-    }
-
-    /* ── Lightbox Overlay ── */
-    #lightbox-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.72);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #lightbox-overlay.active {
-      display: flex;
-    }
-
-    .lightbox-frame {
-      position: relative;
-      max-width: 72vw;
-      max-height: 80vh;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.55);
-      background: #000;
-    }
-
-    .lightbox-frame img {
-      display: block;
-      max-width: 72vw;
-      max-height: 80vh;
-      width: auto;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      width: 32px;
-      height: 32px;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      line-height: 1;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      z-index: 10;
-    }
-
-    .lightbox-close:hover {
-      background: rgba(0,0,0,0.9);
-    }
-
-    /* ── Back button spacing ── */
-    .back-btn {
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }
+    .desc-card::-webkit-scrollbar { width: 6px; }
+    .desc-card::-webkit-scrollbar-track { background: transparent; }
+    .desc-card::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.45); border-radius: 10px; }
+    .desc-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.55rem; color: #ffffff; }
+    .desc-card p { font-size: 0.875rem; line-height: 1.6; color: #ffffff; margin-bottom: 0.4rem; }
+    .back-btn { margin-top: 2.5rem; margin-bottom: 1rem; }
+    /* === SCREENSHOT GRID === */
+    .screenshot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 0; }
+    @media (max-width: 767px) { .screenshot-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .screenshot-grid { grid-template-columns: 1fr; } }
+    .screenshot-item { aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; border: 1.5px solid #c8c8d0; cursor: pointer; }
+    .screenshot-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .screenshot-item:hover img { transform: scale(1.06); }
+    /* === LIGHTBOX === */
+    #lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.72); z-index: 9999; align-items: center; justify-content: center; }
+    #lightbox-overlay.active { display: flex; }
+    .lightbox-frame { position: relative; max-width: 72vw; max-height: 80vh; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.55); background: #000; }
+    .lightbox-frame img { display: block; max-width: 72vw; max-height: 80vh; width: auto; height: auto; border-radius: 12px; }
+    .lightbox-close { position: absolute; top: 10px; right: 12px; width: 32px; height: 32px; background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 50%; font-size: 1.1rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .lightbox-close:hover { background: rgba(0,0,0,0.85); }
+    .project-section { margin-bottom: 2.5rem; }
+    .project-section h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
   </style>
 </head>
 
@@ -201,96 +82,91 @@
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="has-dropdown">
+            <a href="#">Client Works</a>
+            <ul class="dropdown-panel">
+              <li><a href="client-work-placeholder-1.html">Client Work Title 1</a></li>
+              <li><a href="client-work-placeholder-2.html">Client Work Title 2</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Portfolio</a>
+            <ul class="dropdown-panel">
+              <li><a href="creature-gameplay-animation-reel.html">Creature Animation Reel</a></li>
+              <li><a href="game-animation-reel.html">Game Animation Reel</a></li>
+              <li><a href="3d-animation-demo-reel.html">Character Animation Reel</a></li>
+              <li class="dropdown-divider-line"></li>
+              <li class="has-sub">
+                <a href="#">Personal Works</a>
+                <ul class="sub-panel">
+                  <li><a href="new-beginning.html">New Beginning</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
   <main class="main">
 
     <section id="project-details" class="portfolio section">
-
-      <!-- Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>New Beginning</h2>
-        <p>An experimental 3D animated musical short.</p>
+        <p>An experimental 3D animated musical short — directed, animated, and produced by Temitope Falade.</p>
       </div>
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <!-- Animation Video -->
         <div class="ratio ratio-16x9 mb-4">
-          <iframe
-            src="https://www.youtube.com/embed/Sl4J8X0mcCA"
-            title="Full Animated Musical Short"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/Sl4J8X0mcCA" title="New Beginning — Full Animated Musical Short"
+            frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <!-- ── Description Grid ── -->
         <div class="description-grid" data-aos="fade-up">
-
-          <!-- Project Overview -->
           <div class="desc-card">
             <h4>Project Overview</h4>
             <p>New Beginning is a short 3D animated musical film created as an experimental and technical collaboration between three artists. Serving as both a creative exploration and a technical challenge, the project focuses on emotional storytelling through music, performance, and evolving visual symbolism.</p>
             <p>The story follows a young woman processing heartbreak after her relationship ends. Through her song, also titled "New Beginning," she gradually finds healing, hope, and self-renewal. The project merges cinematic animation, musical rhythm, and symbolic environmental storytelling to create an emotionally resonant experience.</p>
             <p>I directed the project and contributed extensively to animation, environment creation, simulations, VFX, and overall visual direction. Despite being a zero-budget production, the film achieved a polished look and served as a major milestone in refining my skills as a CG Generalist and Technical Artist.</p>
           </div>
-
-          <!-- Narrative Concept -->
           <div class="desc-card">
             <h4>Narrative Concept</h4>
-            <p>The animation begins in a somber tone, the protagonist performs her song alone on a dimly lit stage surrounded by a lifeless, dull-colored garden. As the song progresses, subtle visual transformations unfold: leaves regrow, flowers bloom, and color gradually returns to the world around her.</p>
+            <p>The animation begins in a somber tone — the protagonist performs her song alone on a dimly lit stage surrounded by a lifeless, dull-colored garden. As the song progresses, subtle visual transformations unfold: leaves regrow, flowers bloom, and color gradually returns to the world around her.</p>
             <p>This progressive change mirrors the emotional arc of the story, from sorrow and loss to acceptance and renewal. By the final chorus, the once-dead garden has become lush and radiant, symbolizing her emotional rebirth and the start of a new beginning.</p>
-            <p>Between her stage performances, the film intersperses a series of visual metaphors inspired by specific lyrical moments, such as a delicate glass heart falling and shattering, or her body fading to dust, or literally flying through a bubble world, visually representing the poetic imagery of the song.</p>
+            <p>Between her stage performances, the film intersperses visual metaphors inspired by specific lyrical moments — a glass heart shattering, her body fading to dust, literally flying through a bubble world — visually representing the poetic imagery of the song.</p>
           </div>
-
-          <!-- Creative & Visual Direction -->
           <div class="desc-card">
             <h4>Creative &amp; Visual Direction</h4>
             <p>- <strong>Tone &amp; Atmosphere:</strong> A balance of melancholy and hope conveyed through gradual visual transitions and dynamic lighting.</p>
             <p>- <strong>Environment Design:</strong> A transforming garden that evolves in color, light, and life throughout the song to symbolize emotional healing.</p>
-            <p>- <strong>Character Performance:</strong> Subtle facial animations and expressive body language that track the protagonist's emotional progression.</p>
-            <p>- <strong>Visual Metaphors:</strong> Intercut dream-like sequences reinforce key lyrical moments for emotional emphasis and narrative rhythm.</p>
-            <p>- <strong>Music Integration:</strong> Animation pacing and transitions synchronized with the structure and tone of the original track "New Beginning."</p>
+            <p>- <strong>Character Performance:</strong> Subtle facial animations and expressive body language tracking the protagonist's emotional progression.</p>
+            <p>- <strong>Visual Metaphors:</strong> Intercut dream-like sequences reinforcing key lyrical moments for emotional emphasis and narrative rhythm.</p>
+            <p>- <strong>Music Integration:</strong> Animation pacing and transitions synchronized with the structure and tone of the original track.</p>
           </div>
-
-          <!-- Production & Technical Execution -->
           <div class="desc-card">
             <h4>Production &amp; Technical Execution</h4>
             <p>- <strong>Role:</strong> Director, Lead Animator, CG Generalist, Technical Artist.</p>
             <p>- <strong>Software:</strong> Autodesk Maya (animation), VRay (rendering), XGen (hair simulation), nCloth (cloth simulation).</p>
             <p>- Directed the film and supervised creative decisions across all departments.</p>
             <p>- Animated the majority of the shots and choreographed character performance.</p>
-            <p>- Created most of the environments and handled scene composition and lighting.</p>
+            <p>- Created most environments and handled scene composition and lighting.</p>
             <p>- Simulated hair with XGen and cloth with nCloth, ensuring natural, responsive motion.</p>
             <p>- Implemented volumetric lighting and VFX to establish emotional tone and visual depth.</p>
             <p>- Oversaw final render setup and post-processing pipeline.</p>
           </div>
-
-          <!-- Team Contributions -->
           <div class="desc-card">
             <h4>Team Contributions</h4>
             <p>- <strong>Dawn Eloviano:</strong> Song writer, composer, and vocalist.</p>
-            <p>- <strong>Fagbowore Damilola:</strong> Character modeling, cloth modeling, texturing, hair grooming, and the garden environment design.</p>
-            <p>- <strong>Adeosun Olumide:</strong> Assisted with animation of selected shots and final rendering (via personal render farm).</p>
+            <p>- <strong>Fagbowore Damilola:</strong> Character modeling, cloth modeling, texturing, hair grooming, and garden environment design.</p>
+            <p>- <strong>Adeosun Olumide:</strong> Assisted with animation of selected shots and final rendering via personal render farm.</p>
             <p>- <strong>Kolade Tijani:</strong> Character rigging.</p>
             <p>- <strong>Sefchol:</strong> Original beat composer.</p>
             <p>- <strong>Osazie Igodan:</strong> Sound design and musical production.</p>
             <p>- <strong>Olumuyiwa Charles:</strong> Motion Graphics.</p>
           </div>
-
-          <!-- Technical & Artistic Highlights -->
           <div class="desc-card">
             <h4>Technical &amp; Artistic Highlights</h4>
             <p>- Directed and produced a full 3D animated musical short from concept to final render.</p>
@@ -300,17 +176,14 @@
             <p>- Balanced symbolism and realism, merging lyrical metaphor with visual narrative.</p>
             <p>- Optimized render pipeline with VRay for cinematic results under zero-budget constraints.</p>
           </div>
-
-          <!-- Reflection — full width -->
           <div class="desc-card" style="grid-column: 1 / -1; height: 170px;">
             <h4>Reflection</h4>
-            <p>New Beginning stands as both a creative and technical achievement, a proof of concept for blending music, narrative emotion, and evolving 3D environments into one cohesive visual story.</p>
-            <p>As director and lead CG artist, I gained invaluable experience in story-driven animation, complex simulation workflows, and collaborative production management. Beyond its emotional core, the project embodies the spirit of experimentation and resourcefulness, creating something visually and emotionally rich with limited resources.</p>
+            <p>New Beginning stands as both a creative and technical achievement — a proof of concept for blending music, narrative emotion, and evolving 3D environments into one cohesive visual story.</p>
+            <p>As director and lead CG artist, I gained invaluable experience in story-driven animation, complex simulation workflows, and collaborative production management. Beyond its emotional core, the project embodies the spirit of experimentation and resourcefulness — creating something visually and emotionally rich with limited resources.</p>
           </div>
+        </div>
 
-        </div><!-- /description-grid -->
-
-        <!-- ── Screenshots Grid ── -->
+        <!-- Screenshots -->
         <div class="project-section" data-aos="fade-up">
           <h4>Screenshots</h4>
           <div class="screenshot-grid">
@@ -338,29 +211,18 @@
           </div>
         </div>
 
-        <!-- Back Button -->
         <div class="text-center back-btn" data-aos="fade-up">
-          <a href="3d-projects.html" class="btn btn-primary">Back to 3D Projects</a>
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
         </div>
-
       </div>
-
     </section>
 
   </main>
 
-  <!-- ── Lightbox Overlay ── -->
-  <div id="lightbox-overlay" onclick="handleOverlayClick(event)">
-    <div class="lightbox-frame" id="lightbox-frame">
-      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
-      <img id="lightbox-img" src="" alt="">
-    </div>
-  </div>
-
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
+        <p>&#169; <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
         <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -374,38 +236,34 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/vendor/aos/aos.js"></script>
   <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/assets/js/main.js"></script>
+  <div id="lightbox-overlay" onclick="handleOverlayClick(event)">
+    <div class="lightbox-frame" id="lightbox-frame">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
 
   <script>
     function openLightbox(cardEl) {
-      const src = cardEl.querySelector('img').src;
-      const alt = cardEl.querySelector('img').alt;
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-img').alt = alt;
+      const img = cardEl.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
       document.getElementById('lightbox-overlay').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
       document.getElementById('lightbox-overlay').classList.remove('active');
       document.getElementById('lightbox-img').src = '';
       document.body.style.overflow = '';
     }
-
     function handleOverlayClick(e) {
-      if (e.target === document.getElementById('lightbox-overlay')) {
-        closeLightbox();
-      }
+      if (e.target === document.getElementById('lightbox-overlay')) closeLightbox();
     }
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
 </body>

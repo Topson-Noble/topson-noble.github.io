@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Temitope Falade Homepage</title>
+  <title>Temitope Falade — 3D Animator</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -27,30 +27,222 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: FolioOne
-  * Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
-  * Updated: Aug 23 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+
+    /* =====================================================
+       DROPDOWN NAV — dark themed with transparency
+       =====================================================
+
+       To adjust the dropdown background darkness/transparency,
+       change the rgba values in --dropdown-bg below.
+       Format: rgba(RED, GREEN, BLUE, OPACITY)
+       • Opacity 1.0 = fully opaque  |  0.0 = fully transparent
+       • Current: dark charcoal at 88% opacity — easy to read,
+         slightly see-through so the page shows faintly behind.
+    */
+
+    :root {
+      --dropdown-bg:          rgba(30, 30, 35, 0.92);   /* ← ADJUST THIS for bg darkness/transparency */
+      --dropdown-bg-hover:    rgba(55, 55, 65, 0.98);   /* ← ADJUST THIS for hover row highlight */
+      --dropdown-border:      rgba(255, 255, 255, 0.12);/* ← ADJUST THIS for border subtlety */
+      --dropdown-divider:     rgba(255, 255, 255, 0.10);/* ← ADJUST THIS for divider line */
+      --dropdown-text:        #ffffff;                   /* ← ADJUST THIS for link text colour */
+      --dropdown-text-muted:  rgba(255,255,255,0.55);   /* ← ADJUST THIS for the sub-arrow colour */
+    }
+
+    .navmenu ul li.has-dropdown { position: relative; }
+
+    .navmenu ul li.has-dropdown .dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 230px;
+      background: var(--dropdown-bg);
+      border: 1px solid var(--dropdown-border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 6px 0;
+      z-index: 9999;
+      list-style: none;
+      margin: 0;
+    }
+
+    .navmenu ul li.has-dropdown:hover .dropdown-panel,
+    .navmenu ul li.has-dropdown:focus-within .dropdown-panel { display: block; }
+
+    .navmenu ul li.has-dropdown .dropdown-panel li a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      color: var(--dropdown-text);
+      white-space: nowrap;
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+
+    .navmenu ul li.has-dropdown .dropdown-panel li a:hover {
+      background: var(--dropdown-bg-hover);
+      color: var(--dropdown-text);
+    }
+
+    /* Caret on parent links */
+    .navmenu ul li.has-dropdown > a::after {
+      content: " \25BE";
+      font-size: 0.65rem;
+      opacity: 0.6;
+    }
+
+    /* Sub-dropdown (Personal Works) */
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub { position: relative; }
+
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub > a::after {
+      content: " \203A";
+      float: right;
+      font-size: 0.9rem;
+      color: var(--dropdown-text-muted);
+    }
+
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub .sub-panel {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      min-width: 200px;
+      background: var(--dropdown-bg);
+      border: 1px solid var(--dropdown-border);
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 6px 0;
+      list-style: none;
+      margin: 0;
+      z-index: 10000;
+    }
+
+    .navmenu ul li.has-dropdown .dropdown-panel li.has-sub:hover .sub-panel { display: block; }
+
+    .dropdown-panel .dropdown-divider-line {
+      height: 1px;
+      background: var(--dropdown-divider);
+      margin: 5px 0;
+    }
+
+    /* =====================================================
+       ROW 1 — Video cover (full viewport height)
+       ===================================================== */
+    #video-cover {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+
+    #showreel-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Subtle dark vignette so the video doesn't feel raw */
+    #video-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.30);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Optional scroll-hint label at the bottom of the video row */
+    .video-scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.7;
+    }
+
+    .video-scroll-hint span {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .scroll-chevron {
+      width: 22px;
+      height: 22px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+      animation: bounceDown 1.6s ease infinite;
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.7; }
+      50%       { transform: rotate(45deg) translateY(6px); opacity: 1; }
+    }
+
+  </style>
 </head>
 
 <body class="index-page">
 
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR — dropdown themed
+       ═══════════════════════════════════════════════ -->
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <!-- <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <img src="assets/img/logo.webp" alt="">
-      <h1 class="sitename">FolioOne</h1> 
-    </a> -->
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <!-- CLIENT WORKS -->
+          <li class="has-dropdown">
+            <a href="#">Client Works</a>
+            <ul class="dropdown-panel">
+              <li><a href="client-work-placeholder-1.html">Client Work Title 1</a></li>
+              <li><a href="client-work-placeholder-2.html">Client Work Title 2</a></li>
+              <!-- ADD MORE: duplicate a <li> line above -->
+            </ul>
+          </li>
+
+          <!-- PORTFOLIO -->
+          <li class="has-dropdown">
+            <a href="#">Portfolio</a>
+            <ul class="dropdown-panel">
+              <li><a href="creature-gameplay-animation-reel.html">Creature Animation Reel</a></li>
+              <li><a href="game-animation-reel.html">Game Animation Reel</a></li>
+              <li><a href="3d-animation-demo-reel.html">Character Animation Reel</a></li>
+              <li class="dropdown-divider-line"></li>
+              <li class="has-sub">
+                <a href="#">Personal Works</a>
+                <ul class="sub-panel">
+                  <li><a href="new-beginning.html">New Beginning</a></li>
+                  <!-- ADD MORE PERSONAL WORKS HERE -->
+                </ul>
+              </li>
+            </ul>
+          </li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -60,211 +252,248 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-<section id="hero" class="hero section" 
-    style="
-        background: url('assets/img/bgrender2.jpg') center center/cover no-repeat !important; 
-        min-height: 100vh; 
-        position: relative; 
-        overflow: hidden;"
-    data-aos=""> <!-- remove any AOS effect on the hero to render immediately -->
+    <!-- ═══════════════════════════════════════════════
+         ROW 1 — Looping showreel video (full screen)
+         ═══════════════════════════════════════════════ -->
+    <section id="video-cover">
 
-    <!-- dark overlay -->
-    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); backdrop-filter: blur(0px); z-index:0;"></div>
+      <!--
+        ╔══════════════════════════════════════════════════════════╗
+        ║  VIDEO FILE INSTRUCTIONS                                 ║
+        ║                                                          ║
+        ║  1. Export your showreel as MP4 (H.264 codec).          ║
+        ║     Recommended: 1920×1080, ~15–25 MB.                  ║
+        ║                                                          ║
+        ║  2. Name the file:  showreel.mp4                        ║
+        ║                                                          ║
+        ║  3. Create this folder inside your repo:                ║
+        ║        assets/video/                                     ║
+        ║                                                          ║
+        ║  4. Place the file at:                                   ║
+        ║        assets/video/showreel.mp4                        ║
+        ║                                                          ║
+        ║  The poster="..." image shows while the video loads.    ║
+        ║  It currently points to your bgrender2.jpg. Change it   ║
+        ║  to any still from your reel if you prefer.             ║
+        ║                                                          ║
+        ║  Optional WebM (better Safari support): export a .webm  ║
+        ║  version and add this line after the .mp4 source:       ║
+        ║    <source src="assets/video/showreel.webm"             ║
+        ║            type="video/webm">                           ║
+        ╚══════════════════════════════════════════════════════════╝
+      -->
+      <video
+        id="showreel-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="assets/img/bgrender2.jpg"
+      >
+        <source src="assets/video/showreel.mp4" type="video/mp4">
+        <!-- Optional: <source src="assets/video/showreel.webm" type="video/webm"> -->
+      </video>
 
-    <!-- content container above overlay -->
-    <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
+      <!-- Scroll hint -->
+      <div class="video-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-chevron"></div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         ROW 2 — Bio / photo / socials
+         Identical to the original hero section.
+         ═══════════════════════════════════════════════ -->
+    <section id="hero" class="hero section"
+        style="background: url('assets/img/bgrender2.jpg') center center/cover no-repeat !important;
+               min-height: 100vh;
+               position: relative;
+               overflow: hidden;">
+
+      <!-- dark overlay — same as original -->
+      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.5); z-index:0;"></div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
         <div class="row gy-4 align-items-center">
-            <div class="col-lg-6 order-2 order-lg-1">
-                <div class="hero-content">
-                    <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Temitope Falade</span></h1>
-                    <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="3D Animator, Technical Animator, Game Developer"></span></h2>
-                    <p data-aos="fade-up" data-aos-delay="400">I'm a 3D Animator and a Game Developer. As an animator, I thrive in bringing characters to life, for films and games. I bring strong passion to every frames and take ownership of my work. As a game developer, I excel in building flexible, scalable, easy-to-maintain systems for games with a clean architecture. I prioritize performance and functionality, and I pay very close attention to every modules of the system I create.</p>
-                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
-                        <a href="portfolio.html" class="btn btn-primary">View My Works</a>
-                        <a href="contact.html" class="btn btn-outline">Get In Touch</a>
-                    </div>
-                    <div class="social-links" data-aos="fade-up" data-aos-delay="600">
-                        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
-                        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
-                        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
-                        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                    </div>
-                </div>
+
+          <!-- LEFT: bio text + actions + socials -->
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="hero-content">
+              <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Temitope Falade</span></h1>
+              <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="3D Animator, Creature Animator, Game Animator"></span></h2>
+              <p data-aos="fade-up" data-aos-delay="400">I'm a 3D Animator with over five years of professional experience creating character and creature animations for games, films, and VFX. I work primarily with Autodesk Maya and Unreal Engine 5 across both real-time and cinematic pipelines. I genuinely enjoy and have strong passion for animation. I'm more than excited to contribute my animation skills to your projects, let's talk.</p>
+              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+                <a href="3d-animation-demo-reel.html" class="btn btn-primary">View My Works</a>
+            
+              </div>
+              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+                <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+              </div>
             </div>
-            <div class="col-lg-6 order-1 order-lg-2">
-                <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="image-wrapper">
-                        <img src="assets/img/profile/MyPhoto.jpg" alt="Temitope Falade" class="img-fluid" 
-                            style="transform: translateX(0px) translateY(0px);"> <!-- you can nudge X/Y here -->
-                        <div class="floating-elements">
-                            <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
-                                <i class="bi bi-palette"></i>
-                                <span>Design</span>
-                            </div>
-                            <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
-                                <i class="bi bi-code-slash"></i>
-                                <span>Code</span>
-                            </div>
-                            <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
-                                <i class="bi bi-lightbulb"></i>
-                                <span>Ideas</span>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+
+          <!-- RIGHT: photo + floating cards -->
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+              <div class="image-wrapper">
+                <img src="assets/img/profile/MyPhoto.jpg" alt="Temitope Falade" class="img-fluid"
+                     style="transform: translateX(0px) translateY(0px);">
+                <div class="floating-elements">
+                  <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
+                    <i class="bi bi-palette"></i>
+                    <span>Design</span>
+                  </div>
+                  <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
+                    <i class="bi bi-code-slash"></i>
+                    <span>Code</span>
+                  </div>
+                  <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Ideas</span>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+
         </div>
-    </div>
-
-</section>
-
+      </div>
+    </section>
 
 
+    <!-- ═══════════════════════════════════════════════
+         ROW 3 — Skills (original, unchanged)
+         ═══════════════════════════════════════════════ -->
+    <section id="skills" class="skills section">
 
-  <!-- Skills Section -->
-<section id="skills" class="skills section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills and Tools</h2>
+        <p>My software tools proficiency are highlighted as follows:</p>
+      </div>
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Skills and Tools</h2>
-    <p>My software tools proficiency are highlighted as follows:</p>
-  </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4 skills-animation">
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-box">
+              <h3>Unreal Engine</h3>
+              <p>Gameplay systems:</p>
+              <p>- Real-time Events and Interactions</p>
+              <p>- Combat</p>
+              <p>- AI Logic (Behavior Tree)</p>
+              <p>- Inventories</p>
+              <p>- Health</p>
+              <p>- Save/Load</p>
+              <p>- Rhythm Mechanics</p>
+              <p>- UI/UX</p>
+            </div>
+          </div>
 
-    <div class="row g-4 skills-animation">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-box">
+              <h3>Maya</h3>
+              <p>CG Production Pipeline:</p>
+              <p>- 3D Modeling</p>
+              <p>- UV Unwrapping</p>
+              <p>- 3D Animation</p>
+              <p>- Character FX (Hair Grooming with XGen, Cloth simulation with nCloth)</p>
+              <p>- VFX (Fluid simulation with Bifrost)</p>
+              <p>- Lighting and Rendering with Arnold and VRay</p>
+            </div>
+          </div>
 
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-box">
-          <h3>Unreal Engine</h3>
-          <p>Gameplay systems: </p>
-          <p>- Real-time Events and Interactions</p>
-          <p>- Combat</p>
-          <p>- AI Logic (Behavior Tree)</p>
-          <p>- Inventories</p>
-          <p>- Health</p>
-          <p>- Save/Load</p>
-          <p>- Rhythm Mechanics</p>
-          <p>- UI/UX</p>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-box">
+              <h3>Side FX Houdini</h3>
+              <p>- Procedural Content Creation</p>
+              <p>- Tools Creation</p>
+              <p>- Visual FX (FLIP, Pyro, Soft and Rigid Bodies)</p>
+              <p>- Environment Creation (Heightmaps)</p>
+              <p>- USD Workflow</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-box">
+              <h3>Unity</h3>
+              <p>- Interactive game systems.</p>
+              <p>- Game Assets Implementation</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="skill-box">
+              <h3>Blender 3D</h3>
+              <p>- 3D Modeling and Sculpting</p>
+              <p>- Rigging</p>
+              <p>- 3D Animation</p>
+              <p>- Geometry Nodes</p>
+              <p>- Rendering Pipeline (with Cycles and Eevee)</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="skill-box">
+              <h3>Substance Painter</h3>
+              <p>- Procedural Textures Creation</p>
+              <p>- Handpainted Texturing</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="700">
+            <div class="skill-box">
+              <h3>After Effects</h3>
+              <p>- Video Editing</p>
+              <p>- Color Grading</p>
+              <p>- Motion Graphics and Design</p>
+              <p>- Compositing</p>
+              <p>- Camera Tracking and Live Action Integration</p>
+              <p>- Visual FX</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="800">
+            <div class="skill-box">
+              <h3>Photoshop</h3>
+              <p>- Image Editing and Finaling</p>
+              <p>- Concept Art</p>
+              <p>- Image Composition</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-box">
-          <h3>Maya</h3>
-          <p>CG Production Pipeline:</p>
-          <p>- 3D Modeling</p>
-          <p>- UV Unwrapping</p>
-          <p>- 3D Animation</p>
-          <p>- Character FX (Hair Grooming with XGen, Cloth simulation with nCloth)</p>
-          <p>- VFX (Fluid simulation with Bifrost)</p>
-          <p>- Lighting and Rendering with Arnold and VRay</p>
-          <p>- 3D Modeling</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-        <div class="skill-box">
-          <h3>Side FX Houdini</h3>
-          <p>- Procedural Content Creation</p>
-          <p>- Tools Creation</p>
-          <p>- Visual FX (FLIP, Pyro, Soft and Rigid Bodies) </p>
-          <p>- Environment Creation (Heightmaps)</p>
-          <p>- USD Workflow</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-        <div class="skill-box">
-          <h3>Unity</h3>
-          <p>- Interactive game systems.</p>
-          <p>- Game Assets Implementation</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
-        <div class="skill-box">
-          <h3>Blender 3D</h3>
-          <p>- 3D Modeling and Sculpting</p>
-          <p>- Rigging</p>
-          <p>- 3D Animation</p>
-          <p>- Geometry Nodes</p>
-          <p>- Rendering Pipeline (with Cycles and Eevee)</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
-        <div class="skill-box">
-          <h3>Substance Painter</h3>
-          <p>- Procedural Textures Creation</p>
-          <p>- Handpainted Texturing</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="700">
-        <div class="skill-box">
-          <h3>After Effects</h3>
-          <p>- Video Editing</p>
-          <p>- Color Grading</p>
-          <p>- Motion Graphics and Design</p>
-          <p>- Compositing</p>
-          <p>- Camera Tracking and Live Action Integration</p>
-          <p>- Visual FX</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="800">
-        <div class="skill-box">
-          <h3>Photoshop</h3>
-          <p>- Image Editing and Finaling</p>
-          <p>- Concept Art</p>
-          <p>- Image Composition</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section><!-- /Skills Section -->
-
-
-
+    </section>
 
   </main>
 
   <footer id="footer" class="footer">
-
     <div class="container">
-      <div class="copyright text-center ">
+      <div class="copyright text-center">
         <p>2025 <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
-          <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
-          <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
       </div>
-
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
@@ -278,10 +507,7 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
